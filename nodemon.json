@@ -1,5 +1,6 @@
 {
-   "watch": ["dist"],
-   "ext": "js,json",
-   "ignore": ["src/**/*.spec.ts"]
+   "watch": ["src/"],
+   "ext": "ts,json",
+   "ignore": ["src/**/*.spec.ts"],
+   "exec": "yarn ts-node"
 }
