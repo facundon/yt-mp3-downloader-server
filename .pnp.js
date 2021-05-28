@@ -46,7 +46,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["@typescript-eslint/parser", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["class-validator", "npm:0.13.1"],
-            ["connect-typeorm", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:1.1.4"],
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
@@ -58,6 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["reflect-metadata", "npm:0.1.13"],
             ["ts-node", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:10.0.0"],
             ["typeorm", "npm:0.2.32"],
+            ["typeorm-store", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:2.0.0"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
           "linkType": "SOFT",
@@ -244,15 +244,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/connect", "npm:3.4.34"],
             ["@types/node", "npm:15.6.1"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@types/debug", [
-        ["npm:0.0.31", {
-          "packageLocation": "./.yarn/cache/@types-debug-npm-0.0.31-1285bd4134-42573b21b7.zip/node_modules/@types/debug/",
-          "packageDependencies": [
-            ["@types/debug", "npm:0.0.31"]
           ],
           "linkType": "HARD",
         }]
@@ -1268,32 +1259,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["unique-string", "npm:2.0.0"],
             ["write-file-atomic", "npm:3.0.3"],
             ["xdg-basedir", "npm:4.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["connect-typeorm", [
-        ["npm:1.1.4", {
-          "packageLocation": "./.yarn/cache/connect-typeorm-npm-1.1.4-fab8198d1a-6ef813a870.zip/node_modules/connect-typeorm/",
-          "packageDependencies": [
-            ["connect-typeorm", "npm:1.1.4"]
-          ],
-          "linkType": "SOFT",
-        }],
-        ["virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:1.1.4", {
-          "packageLocation": "./.yarn/$$virtual/connect-typeorm-virtual-a6204484ff/0/cache/connect-typeorm-npm-1.1.4-fab8198d1a-6ef813a870.zip/node_modules/connect-typeorm/",
-          "packageDependencies": [
-            ["connect-typeorm", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:1.1.4"],
-            ["@types/debug", "npm:0.0.31"],
-            ["@types/express-session", "npm:1.17.3"],
-            ["@types/typeorm", null],
-            ["debug", "virtual:48933b28331d16c1d73786360e7ba20f54f6df4949c6ab5c13ac4c4353b5c70f2d36a97de9a9c531027ad3588d8fd7f384706f298f0eff0356b58bb9c47f63ec#npm:4.3.2"],
-            ["express-session", "npm:1.17.2"],
-            ["typeorm", "npm:0.2.32"]
-          ],
-          "packagePeers": [
-            "@types/typeorm",
-            "typeorm"
           ],
           "linkType": "HARD",
         }]
@@ -4532,6 +4497,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["typeorm-store", [
+        ["npm:2.0.0", {
+          "packageLocation": "./.yarn/cache/typeorm-store-npm-2.0.0-3ba734ef9b-ba43c39212.zip/node_modules/typeorm-store/",
+          "packageDependencies": [
+            ["typeorm-store", "npm:2.0.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:2.0.0", {
+          "packageLocation": "./.yarn/$$virtual/typeorm-store-virtual-a894a1769d/0/cache/typeorm-store-npm-2.0.0-3ba734ef9b-ba43c39212.zip/node_modules/typeorm-store/",
+          "packageDependencies": [
+            ["typeorm-store", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:2.0.0"],
+            ["@types/typeorm", null],
+            ["typeorm", "npm:0.2.32"]
+          ],
+          "packagePeers": [
+            "@types/typeorm",
+            "typeorm"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["typescript", [
         ["patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e", {
           "packageLocation": "./.yarn/cache/typescript-patch-70a7929abf-3be4431759.zip/node_modules/typescript/",
@@ -4874,7 +4861,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["@typescript-eslint/parser", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["class-validator", "npm:0.13.1"],
-            ["connect-typeorm", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:1.1.4"],
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
@@ -4886,6 +4872,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["reflect-metadata", "npm:0.1.13"],
             ["ts-node", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:10.0.0"],
             ["typeorm", "npm:0.2.32"],
+            ["typeorm-store", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:2.0.0"],
             ["typescript", "patch:typescript@npm%3A4.2.4#builtin<compat/typescript>::version=4.2.4&hash=a45b0e"]
           ],
           "linkType": "SOFT",

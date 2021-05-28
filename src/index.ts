@@ -1,7 +1,7 @@
 import express from "express"
 import session from "express-session"
 import passport from "passport"
-import { TypeormStore } from "connect-typeorm"
+import { TypeormStore } from "typeorm-store"
 import { createConnection } from "typeorm"
 
 import implementLocalStrategy from "./auth/local"
@@ -16,19 +16,17 @@ createConnection()
    .then(connection => {
       const app = express()
       const sessionRepository = connection.getRepository(Session)
-      const SESSION_CONFIG = {
+      const SESSION_CONFIG: session.SessionOptions = {
          secret: process.env.SECRET || "testingsecretsession",
          resave: false,
          saveUninitialized: true,
-         sesion: new TypeormStore({ cleanupLimit: 2, ttl: 86400 }).connect(
-            sessionRepository
-         ),
+         store: new TypeormStore({ repository: sessionRepository }),
          cookie: {
             maxAge: 1000 * 60 * 60 * 24,
-            secure: false,
+            secure: undefined,
          },
       }
-      if (app.get("env") === "production") {
+      if (app.get("env") === "production" && SESSION_CONFIG.cookie) {
          app.set("trust proxy", 1) // trust first proxy
          SESSION_CONFIG.cookie.secure = true // serve secure cookies
       }

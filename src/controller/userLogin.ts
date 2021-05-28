@@ -2,8 +2,8 @@ import { Request, Response } from "express"
 
 export async function userLogin(req: Request, res: Response) {
    if (req.isAuthenticated()) {
-      res.send("Logeado papu")
+      return res.sendStatus(202)
    } else {
-      res.send("Wrong user papu")
+      return res.status(401).send("Wrong email or password")
    }
 }

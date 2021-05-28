@@ -163,13 +163,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/debug@npm:0.0.31":
-  version: 0.0.31
-  resolution: "@types/debug@npm:0.0.31"
-  checksum: 42573b21b744cc619a7f5b86d54d63a3b4e7bd23f253dc9cfabc26b5e99ae7d1560c5c435700a989d1db0591dda5ff7d276389f6cc7e0a0f02e8f87d52658d87
-  languageName: node
-  linkType: hard
-
 "@types/express-serve-static-core@npm:^4.17.18":
   version: 4.17.20
   resolution: "@types/express-serve-static-core@npm:4.17.20"
@@ -181,7 +174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/express-session@npm:^1, @types/express-session@npm:^1.15.5":
+"@types/express-session@npm:^1":
   version: 1.17.3
   resolution: "@types/express-session@npm:1.17.3"
   dependencies:
@@ -1018,20 +1011,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"connect-typeorm@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "connect-typeorm@npm:1.1.4"
-  dependencies:
-    "@types/debug": 0.0.31
-    "@types/express-session": ^1.15.5
-    debug: ^4.1.1
-    express-session: ^1.15.6
-  peerDependencies:
-    typeorm: ^0.1.4 || ^0.2.5
-  checksum: 6ef813a8709409751b2adf9d33c99a3c6d46818c3f2bda81b78eee301a875625053df0d2b459cc9cfbe9e01d9be796040e2e069df57ce16dad12fa641627186b
-  languageName: node
-  linkType: hard
-
 "console-control-strings@npm:^1.0.0, console-control-strings@npm:~1.1.0":
   version: 1.1.0
   resolution: "console-control-strings@npm:1.1.0"
@@ -1504,7 +1483,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express-session@npm:^1.15.6, express-session@npm:^1.17.2":
+"express-session@npm:^1.17.2":
   version: 1.17.2
   resolution: "express-session@npm:1.17.2"
   dependencies:
@@ -3810,6 +3789,15 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"typeorm-store@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "typeorm-store@npm:2.0.0"
+  peerDependencies:
+    typeorm: ^0.2.7
+  checksum: ba43c39212dcef5aad90988dea90dbacbff6b7360aee033c06af12694c50926da380742aa2fc2e225a0fd4b7753d18b68f146c438a660b23440d7afb8f499968
+  languageName: node
+  linkType: hard
+
 "typeorm@npm:^0.2.32":
   version: 0.2.32
   resolution: "typeorm@npm:0.2.32"
@@ -4147,7 +4135,6 @@ typescript@4.2.4:
     "@typescript-eslint/eslint-plugin": ^4.25.0
     "@typescript-eslint/parser": ^4.25.0
     class-validator: ^0.13.1
-    connect-typeorm: ^1.1.4
     eslint: ^7.27.0
     express: ^4.17.1
     express-session: ^1.17.2
@@ -4159,6 +4146,7 @@ typescript@4.2.4:
     reflect-metadata: ^0.1.13
     ts-node: ^10.0.0
     typeorm: ^0.2.32
+    typeorm-store: ^2.0.0
     typescript: 4.2.4
   languageName: unknown
   linkType: soft

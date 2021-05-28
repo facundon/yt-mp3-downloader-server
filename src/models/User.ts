@@ -1,15 +1,19 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
-import { IsEmail } from "class-validator"
+import { IsEmail, IsNotEmpty, MinLength } from "class-validator"
 
 @Entity()
 export class User {
    @PrimaryGeneratedColumn("uuid")
    id: string
 
-   @Column()
+   @Column({ nullable: false })
+   @IsNotEmpty({ message: "Please enter a name" })
+   @MinLength(3, {
+      message: "The name must be at least $constraint1 characters",
+   })
    name: string
 
-   @Column({ unique: true })
+   @Column({ unique: true, nullable: false })
    @IsEmail()
    email: string
 

@@ -11,5 +11,8 @@ module.exports = {
       sourceType: "module",
    },
    plugins: ["@typescript-eslint"],
-   rules: { "@typescript-eslint/explicit-module-boundary-types": "off" },
+   rules: {
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "@typescript-eslint/no-non-null-assertion": "off",
+   },
 }
