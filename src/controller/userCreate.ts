@@ -8,9 +8,10 @@ export async function userCreate(req: Request, res: Response) {
    const userRepository = getRepository(User)
 
    const userExist = await userRepository.findOne({ email: req.body.email })
-   if (userExist) return res.status(409).send("Email already in use")
+   if (userExist)
+      return res.status(409).json({ message: "Email already in use" })
    if (!req.body.password)
-      return res.status(400).send("Please enter a password")
+      return res.status(400).json({ message: "Please enter a password" })
 
    const { salt, hash } = genPassword(req.body.password)
    const user = userRepository.create({
@@ -25,9 +26,10 @@ export async function userCreate(req: Request, res: Response) {
    if (validationErrors.length > 0)
       return res
          .status(400)
-         .send(Object.values(validationErrors[0].constraints!)[0])
+         .json({ message: Object.values(validationErrors[0].constraints!)[0] })
 
    const result = await userRepository.save(user)
-   if (!result) return res.status(500).send("Error creating a new user")
+   if (!result)
+      return res.status(500).json({ message: "Error creating a new user" })
    res.sendStatus(201)
 }

@@ -37,6 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
+            ["@types/cors", "npm:2.8.10"],
             ["@types/express", "npm:4.17.12"],
             ["@types/express-session", "npm:1.17.3"],
             ["@types/node", "npm:15.6.1"],
@@ -46,6 +47,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["@typescript-eslint/parser", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["class-validator", "npm:0.13.1"],
+            ["cors", "npm:2.8.5"],
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
@@ -244,6 +246,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/connect", "npm:3.4.34"],
             ["@types/node", "npm:15.6.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/cors", [
+        ["npm:2.8.10", {
+          "packageLocation": "./.yarn/cache/@types-cors-npm-2.8.10-53b686e0da-c3f3d6feee.zip/node_modules/@types/cors/",
+          "packageDependencies": [
+            ["@types/cors", "npm:2.8.10"]
           ],
           "linkType": "HARD",
         }]
@@ -1321,6 +1332,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/core-util-is-npm-1.0.2-9fc2b94dc3-089015ee3c.zip/node_modules/core-util-is/",
           "packageDependencies": [
             ["core-util-is", "npm:1.0.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["cors", [
+        ["npm:2.8.5", {
+          "packageLocation": "./.yarn/cache/cors-npm-2.8.5-c9935a2d12-c83e88c154.zip/node_modules/cors/",
+          "packageDependencies": [
+            ["cors", "npm:2.8.5"],
+            ["object-assign", "npm:4.1.1"],
+            ["vary", "npm:1.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -4852,6 +4874,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["yt-mp3-downloader-server", "workspace:."],
+            ["@types/cors", "npm:2.8.10"],
             ["@types/express", "npm:4.17.12"],
             ["@types/express-session", "npm:1.17.3"],
             ["@types/node", "npm:15.6.1"],
@@ -4861,6 +4884,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["@typescript-eslint/parser", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
             ["class-validator", "npm:0.13.1"],
+            ["cors", "npm:2.8.5"],
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],

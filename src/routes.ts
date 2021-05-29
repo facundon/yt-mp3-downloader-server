@@ -7,6 +7,6 @@ const router = Router()
 router.post("/login", passport.authenticate("local"), userLogin)
 router.post("/register", userCreate)
 
-router.get("/api/convert", videoDownload)
+router.get("/api/converter", videoDownload)
 
 export default router

@@ -1,6 +1,7 @@
 import express from "express"
 import session from "express-session"
 import passport from "passport"
+import cors, { CorsOptions } from "cors"
 import { TypeormStore } from "typeorm-store"
 import { createConnection } from "typeorm"
 
@@ -11,6 +12,14 @@ import router from "./routes"
 import "reflect-metadata"
 
 const port = 5000
+const CORS_CONFIG: CorsOptions = {
+   origin: "http://localhost:3000",
+   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+   allowedHeaders: ["Content-Type", "Authorization"],
+   preflightContinue: true,
+   credentials: true,
+   optionsSuccessStatus: 204,
+}
 
 createConnection()
    .then(connection => {
@@ -33,6 +42,7 @@ createConnection()
 
       app.use(express.json())
       app.use(express.urlencoded({ extended: true }))
+      app.use(cors(CORS_CONFIG))
       app.use(session(SESSION_CONFIG))
       implementLocalStrategy()
       app.use(passport.initialize())
