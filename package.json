@@ -7,8 +7,11 @@
       "email": "facundonrodriguez@gmail.com"
    },
    "dependencies": {
+      "axios": "^0.21.1",
       "class-validator": "^0.13.1",
       "cors": "^2.8.5",
+      "dotenv": "^10.0.0",
+      "duration-iso-8601": "^1.1.0",
       "express": "^4.17.1",
       "express-session": "^1.17.2",
       "mysql2": "^2.2.5",
