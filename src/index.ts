@@ -13,7 +13,7 @@ import "reflect-metadata"
 
 const port = 5000
 const CORS_CONFIG: CorsOptions = {
-   origin: "http://localhost:3000",
+   origin: process.env.FRONTEND_URL,
    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
    allowedHeaders: ["Content-Type", "Authorization"],
    preflightContinue: true,

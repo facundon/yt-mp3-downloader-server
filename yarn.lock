@@ -668,6 +668,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"axios@npm:^0.21.1":
+  version: 0.21.1
+  resolution: "axios@npm:0.21.1"
+  dependencies:
+    follow-redirects: ^1.10.0
+  checksum: 864fb7b5d077d236737f10adca53bf451a93f35a15271f56fba8da07265a02d26b7d881b935a6697dc6adb0549ea3e56d2eecb403edaa3bb78f6479901c10f69
+  languageName: node
+  linkType: hard
+
 "balanced-match@npm:^1.0.0":
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
@@ -1233,6 +1242,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dotenv@npm:^10.0.0":
+  version: 10.0.0
+  resolution: "dotenv@npm:10.0.0"
+  checksum: 9c45712e213de63bdb646b8e5344749b7566e25a67bbd3f03711d54e40eff10066c1f23eff0081d0949fda7c8efcc6e9e8bf18d0f023a8274f55f5d5f97bb6db
+  languageName: node
+  linkType: hard
+
 "dotenv@npm:^8.2.0":
   version: 8.6.0
   resolution: "dotenv@npm:8.6.0"
@@ -1244,6 +1260,13 @@ __metadata:
   version: 0.1.4
   resolution: "duplexer3@npm:0.1.4"
   checksum: 2a4ae463aafdb6e3541e556785d971e83e8d2b534b4cfcb114b01ebc6af6dde5a07454835c7207c8eeb5472927db1bac1b507044413164e991906c5da807938b
+  languageName: node
+  linkType: hard
+
+"duration-iso-8601@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "duration-iso-8601@npm:1.1.0"
+  checksum: d900facc3b42aaffe5184c2ef48cca1f4fdbb5de7f45268352eddfcd851300ed0013f987176df05dc3f1934ca5705fa9f96e2030a6bfc910c623271a265df91b
   languageName: node
   linkType: hard
 
@@ -1652,6 +1675,16 @@ __metadata:
   version: 3.1.1
   resolution: "flatted@npm:3.1.1"
   checksum: 1065cd78294ea651b8c1b96c298a3e70893a23da655e2288e40c06d5d9b1ebce4bd977e604678e01065a92580f3de5078d60d9ee4cdcede9a9989859d7eb5057
+  languageName: node
+  linkType: hard
+
+"follow-redirects@npm:^1.10.0":
+  version: 1.14.1
+  resolution: "follow-redirects@npm:1.14.1"
+  peerDependenciesMeta:
+    debug:
+      optional: true
+  checksum: 761a18699688b19d66b3e9199ecaf9cd39ede953f3529299c7fca4190b27b855c17c491170977844d5db5e169ffc35ebae999bb0833e9c9c61988d19c20ae7ab
   languageName: node
   linkType: hard
 
@@ -4152,8 +4185,11 @@ typescript@4.2.4:
     "@types/prettier": ^2
     "@typescript-eslint/eslint-plugin": ^4.25.0
     "@typescript-eslint/parser": ^4.25.0
+    axios: ^0.21.1
     class-validator: ^0.13.1
     cors: ^2.8.5
+    dotenv: ^10.0.0
+    duration-iso-8601: ^1.1.0
     eslint: ^7.27.0
     express: ^4.17.1
     express-session: ^1.17.2
