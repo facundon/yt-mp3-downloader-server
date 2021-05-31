@@ -14,7 +14,6 @@ const router = Router()
 router.post("/login", passport.authenticate("local"), userLogin)
 router.post("/register", userCreate)
 router.get("/logout", isAuth, userLogout)
-router.get("/isAuth", isAuth, userLogin)
 router.get("/api/converter", isAuth, videoDownload)
 router.get("/api/youtube", isAuth, searchYoutube)
 
