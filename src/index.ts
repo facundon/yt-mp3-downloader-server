@@ -11,7 +11,7 @@ import router from "./routes"
 
 import "reflect-metadata"
 
-const port = 5000
+const port = 8080
 const CORS_CONFIG: CorsOptions = {
    origin: process.env.FRONTEND_URL,
    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
