@@ -31,3 +31,11 @@ export const appendVideoDuration = (
    })
    return nextSearchItems
 }
+
+export const getSongPath = (stdout: string) => {
+   const searchReference = "[ffmpeg] Destination:"
+   const fileExtension = ".mp3"
+   const initSubstr = stdout.indexOf(searchReference) + searchReference.length
+   const endSubstr = stdout.indexOf(fileExtension) + fileExtension.length
+   return stdout.slice(initSubstr, endSubstr).trim()
+}
