@@ -1,15 +1,12 @@
-FROM node:14-alpine3.10 as base
+FROM node:14-alpine3.10 AS base
+RUN apk add --no-cache python2
+RUN apk add --no-cache py2-pip
+RUN apk add --no-cache ffmpeg
+RUN pip2 install --upgrade youtube-dl
 WORKDIR /app
-
-FROM base as builder
-COPY ["package.json" ,"yarn.lock", "./"]
-RUN yarn install --production --pure-lockfile
-COPY . .
-RUN yarn build
-
-FROM base
-COPY --from=builder /tmp/node_modules/ ./node_modules/
-COPY --from=builder /dist .
-EXPOSE 8080
-CMD ["node", "index.js"]
-
+COPY package.json ./
+COPY yarn.lock ./
+RUN npm i --production
+COPY tsconfig.json ./
+COPY ./src ./src
+ENV NODE_ENV=production
