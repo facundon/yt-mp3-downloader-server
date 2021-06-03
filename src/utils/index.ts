@@ -7,6 +7,9 @@ import {
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
 import { convertYouTubeDuration } from "duration-iso-8601"
+import { getRepository } from "typeorm"
+import { Video } from "../models/Video"
+import { User } from "../models/User"
 
 export const checkYoutubeEnvVariables = () => {
    if (!process.env.YOUTUBE_API_URL || !process.env.YOUTUBE_API_KEY)
@@ -38,4 +41,9 @@ export const getSongPath = (stdout: string) => {
    const initSubstr = stdout.indexOf(searchReference) + searchReference.length
    const endSubstr = stdout.indexOf(fileExtension) + fileExtension.length
    return stdout.slice(initSubstr, endSubstr).trim()
+}
+
+export const checkVideoDuplicates = async (videoId: string, user: User) => {
+   const videos = await getRepository(Video).find({ user })
+   return Boolean(videos.filter(vid => vid.videoId === videoId).length)
 }
