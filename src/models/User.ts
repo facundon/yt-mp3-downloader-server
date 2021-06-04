@@ -1,6 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { IsEmail, IsNotEmpty, MinLength } from "class-validator"
-
+import { Video } from "./Video"
 @Entity()
 export class User {
    @PrimaryGeneratedColumn("uuid")
@@ -17,8 +17,11 @@ export class User {
    @IsEmail()
    email: string
 
-   @Column("simple-array")
-   videosId: string[]
+   @OneToMany(() => Video, video => video.user, {
+      onDelete: "CASCADE",
+      onUpdate: "CASCADE",
+   })
+   videos: Video[]
 
    @Column()
    hash: string

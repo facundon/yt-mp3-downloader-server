@@ -19,7 +19,7 @@ export async function userCreate(req: Request, res: Response) {
       name: req.body.name,
       hash,
       salt,
-      videosId: [],
+      videos: [],
    })
 
    const validationErrors = await validate(user)
