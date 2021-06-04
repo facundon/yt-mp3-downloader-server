@@ -23,7 +23,7 @@ router.get("/api/youtube", isAuth, searchYoutube)
 router.get("/user", isAuth, userLogin)
 
 router.get("/user/favorites", isAuth, getFavorites)
-router.put("/user/favorites", isAuth, addFavorite)
-router.delete("/user/favorites", isAuth, delFavorite)
+router.put("/user/favorites/:id", isAuth, addFavorite)
+router.delete("/user/favorites/:id", isAuth, delFavorite)
 
 export default router
