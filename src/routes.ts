@@ -7,7 +7,8 @@ import {
    videoDownload,
    searchYoutube,
    addFavorite,
-   getVideos,
+   getFavorites,
+   delFavorite,
 } from "./controller"
 import { isAuth } from "./middleware/auth"
 
@@ -19,8 +20,10 @@ router.put("/logout", userLogout)
 
 router.get("/api/converter", isAuth, videoDownload)
 router.get("/api/youtube", isAuth, searchYoutube)
+router.get("/user", isAuth, userLogin)
 
-router.get("/user/favorites", isAuth, getVideos)
+router.get("/user/favorites", isAuth, getFavorites)
 router.put("/user/favorites", isAuth, addFavorite)
+router.delete("/user/favorites", isAuth, delFavorite)
 
 export default router

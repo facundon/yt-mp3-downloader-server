@@ -1,15 +1,18 @@
+import { createWriteStream, rm } from "fs"
+import { create as createArchiver } from "archiver"
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore
+import { convertYouTubeDuration } from "duration-iso-8601"
+import { getRepository } from "typeorm"
+
+import { Video } from "../models/Video"
+import { User } from "../models/User"
+
 import {
    YouTubeSearchItem,
    YouTubeVideoItem,
    YouTubeVideo,
 } from "../types/youtube"
-
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
-import { convertYouTubeDuration } from "duration-iso-8601"
-import { getRepository } from "typeorm"
-import { Video } from "../models/Video"
-import { User } from "../models/User"
 
 export const checkYoutubeEnvVariables = () => {
    if (!process.env.YOUTUBE_API_URL || !process.env.YOUTUBE_API_KEY)
@@ -46,4 +49,41 @@ export const getSongPath = (stdout: string) => {
 export const checkVideoDuplicates = async (videoId: string, user: User) => {
    const videos = await getRepository(Video).find({ user })
    return Boolean(videos.filter(vid => vid.videoId === videoId).length)
+}
+
+export const zipFolder = (folder: string, cb: (outputPath: string) => void) => {
+   const filePath = "./Favorites.zip"
+   const output = createWriteStream(filePath)
+   const archive = createArchiver("zip", {
+      zlib: { level: 9 }, // Sets the compression level.
+   })
+   output.on("close", function () {
+      console.log(archive.pointer() + " total bytes")
+      console.log(
+         "archiver has been finalized and the output file descriptor has closed."
+      )
+   })
+   output.on("end", function () {
+      console.log("Data has been drained")
+   })
+   archive.on("warning", function (err) {
+      console.log(err)
+      if (err.code === "ENOENT") {
+         console.error(err.message)
+      } else {
+         throw err
+      }
+   })
+   archive.on("error", function (err) {
+      throw err
+   })
+   archive.pipe(output)
+   archive.directory(folder, false)
+   archive.finalize()
+   archive.on("finish", () => {
+      rm(folder, { recursive: true }, err => {
+         err && console.error(err)
+         cb(filePath)
+      })
+   })
 }
