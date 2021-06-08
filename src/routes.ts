@@ -18,6 +18,16 @@ router.post("/login", passport.authenticate("local"), userLogin)
 router.post("/register", userCreate)
 router.put("/logout", userLogout)
 
+router.post(
+   "/login/facebook",
+   passport.authenticate("facebook-token"),
+   userLogin
+)
+router.get(
+   "/login/google",
+   passport.authenticate("google", { scope: ["profile"] })
+)
+
 router.get("/api/converter", isAuth, videoDownload)
 router.get("/api/youtube", isAuth, searchYoutube)
 router.get("/user", isAuth, userLogin)

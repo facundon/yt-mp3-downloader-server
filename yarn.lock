@@ -258,6 +258,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/passport-facebook-token@npm:^0.4.34":
+  version: 0.4.34
+  resolution: "@types/passport-facebook-token@npm:0.4.34"
+  dependencies:
+    "@types/express": "*"
+    "@types/passport": "*"
+  checksum: bd12ee8cb94781269510a86550c7679c5f79abe335fbe3301b8d6633d0741146db17ff8180fdf7bab40bdfd8db8532f91dfdac83e2deeaf70a061de0ae311662
+  languageName: node
+  linkType: hard
+
 "@types/passport-local@npm:^1":
   version: 1.0.33
   resolution: "@types/passport-local@npm:1.0.33"
@@ -754,6 +764,13 @@ __metadata:
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: c1b41a26ddc6620eb7f1ee6c29c812f5942a4e328e74263f995872cfb8ca3aee08542beb25cd10fd7ef16e4f16603e25c35a26e776c01fd55277e5035e829e0e
+  languageName: node
+  linkType: hard
+
+"base64url@npm:3.x.x":
+  version: 3.0.1
+  resolution: "base64url@npm:3.0.1"
+  checksum: e7c3424af4c711e1fbfe6b6e7e3976af684a5a080aa7c17a3d1fd375a029ff5f831ada40223571a8032d7c45f91d48266a9c367467a5f0c995cfb69de90cbdd3
   languageName: node
   linkType: hard
 
@@ -2062,6 +2079,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"helmet@npm:^4.6.0":
+  version: 4.6.0
+  resolution: "helmet@npm:4.6.0"
+  checksum: 5018633703ac6933b35c581d878f279b3be642c7ce68dcccbaf31be059aefb723a08ed86831df657b82fd2994b4163404b51c76a0dc3ea9cdd67794bf1b0466d
+  languageName: node
+  linkType: hard
+
 "highlight.js@npm:^10.7.1":
   version: 10.7.2
   resolution: "highlight.js@npm:10.7.2"
@@ -2989,6 +3013,13 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"oauth@npm:0.9.x":
+  version: 0.9.15
+  resolution: "oauth@npm:0.9.15"
+  checksum: 2f1609b8e7fc548b3916d601d3bfe6d78585c20a668f36304ea587f6d6c33c9ad1f58c17dc7618fe1ceae9396fcc8e7a8be328960b9f07bd314c088a12f6cefe
+  languageName: node
+  linkType: hard
+
 "object-assign@npm:^4, object-assign@npm:^4.0.1, object-assign@npm:^4.1.0":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
@@ -3109,12 +3140,55 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"passport-facebook-token@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "passport-facebook-token@npm:4.0.0"
+  dependencies:
+    passport-oauth: 1.0.0
+  checksum: 3356c78e9aa7c9f8007db9211011dd6041f1352571bea08968418a863f7188059acf2d7e5aef507e615c2bdc19a85b4edb35dbb8c6eb2382dae0c2db5d9fc9d9
+  languageName: node
+  linkType: hard
+
 "passport-local@npm:^1.0.0":
   version: 1.0.0
   resolution: "passport-local@npm:1.0.0"
   dependencies:
     passport-strategy: 1.x.x
   checksum: 2d3decab3fde758227c42c5780ffa7fac50759fcf56b49a845de05c72062e2f5b2288ab1badddba0fb6d21eb3d5b4e4bb1083b922624ac4fe90e97fcba0f3b96
+  languageName: node
+  linkType: hard
+
+"passport-oauth1@npm:1.x.x":
+  version: 1.1.0
+  resolution: "passport-oauth1@npm:1.1.0"
+  dependencies:
+    oauth: 0.9.x
+    passport-strategy: 1.x.x
+    utils-merge: 1.x.x
+  checksum: bd809415b42a4acf521447381a19cb5b90a020504cec1fb999cad8ccb120b97174f1d21a40d6949aa5ced700688066faf71e9994adaf682d7079d40c54ed0fa7
+  languageName: node
+  linkType: hard
+
+"passport-oauth2@npm:1.x.x":
+  version: 1.5.0
+  resolution: "passport-oauth2@npm:1.5.0"
+  dependencies:
+    base64url: 3.x.x
+    oauth: 0.9.x
+    passport-strategy: 1.x.x
+    uid2: 0.0.x
+    utils-merge: 1.x.x
+  checksum: b63ff7843e21375cdf9f5d9580b19488c8f7c257d614dc0b0151c1692948b2f92410c14278843260608aec81330e249880cdc55fbbd1b82d85cdc8572e13e4e6
+  languageName: node
+  linkType: hard
+
+"passport-oauth@npm:1.0.0":
+  version: 1.0.0
+  resolution: "passport-oauth@npm:1.0.0"
+  dependencies:
+    passport-oauth1: 1.x.x
+    passport-oauth2: 1.x.x
+  checksum: 64d33b282d0c816bfc344c648884645cf6acef25b040ee021c13b63bc6be3bfe6d8286679b8865dfb98eea73ae8a87e0df047250e0484ab3a55995e91df34154
   languageName: node
   linkType: hard
 
@@ -4141,6 +4215,13 @@ typescript@4.2.4:
   languageName: node
   linkType: hard
 
+"uid2@npm:0.0.x":
+  version: 0.0.3
+  resolution: "uid2@npm:0.0.3"
+  checksum: 7b0fc54edb7e7366e2c4ff784167d557374f1733b4f6ff2c4cf8362f45fa5027c09c535a9c912137f94547bfc38e5d153ea7b499d999b34921da7630b826d189
+  languageName: node
+  linkType: hard
+
 "undefsafe@npm:^2.0.3":
   version: 2.0.3
   resolution: "undefsafe@npm:2.0.3"
@@ -4230,7 +4311,7 @@ typescript@4.2.4:
   languageName: node
   linkType: hard
 
-"utils-merge@npm:1.0.1":
+"utils-merge@npm:1.0.1, utils-merge@npm:1.x.x":
   version: 1.0.1
   resolution: "utils-merge@npm:1.0.1"
   checksum: a457956ebc09efbda05da8bf213ab89140bb9dffa3c42b3315dd8fc3c45d67a1b802741f58b7bba4872113201fc275fc86470289d8bd32b74297b5e5b5980705
@@ -4419,6 +4500,7 @@ typescript@4.2.4:
     "@types/express-session": ^1
     "@types/node": ^15.6.1
     "@types/passport": ^0
+    "@types/passport-facebook-token": ^0.4.34
     "@types/passport-local": ^1
     "@types/prettier": ^2
     "@typescript-eslint/eslint-plugin": ^4.25.0
@@ -4432,9 +4514,11 @@ typescript@4.2.4:
     eslint: ^7.27.0
     express: ^4.17.1
     express-session: ^1.17.2
+    helmet: ^4.6.0
     mysql2: ^2.2.5
     nodemon: ^2.0.7
     passport: ^0.4.1
+    passport-facebook-token: ^4.0.0
     passport-local: ^1.0.0
     prettier: ^2.3.0
     reflect-metadata: ^0.1.13

@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 import { getRepository } from "typeorm"
 import { validate } from "class-validator"
 import { genPassword } from "../auth/utils"
-import { User } from "../models/User"
+import { User, userMethod } from "../models/User"
 
 export async function userCreate(req: Request, res: Response) {
    const userRepository = getRepository(User)
@@ -17,6 +17,7 @@ export async function userCreate(req: Request, res: Response) {
    const user = userRepository.create({
       email: req.body.email,
       name: req.body.name,
+      method: userMethod.LOCAL,
       hash,
       salt,
       videos: [],

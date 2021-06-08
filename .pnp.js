@@ -43,6 +43,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express-session", "npm:1.17.3"],
             ["@types/node", "npm:15.6.1"],
             ["@types/passport", "npm:0.4.7"],
+            ["@types/passport-facebook-token", "npm:0.4.34"],
             ["@types/passport-local", "npm:1.0.33"],
             ["@types/prettier", "npm:2.2.3"],
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
@@ -56,9 +57,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
+            ["helmet", "npm:4.6.0"],
             ["mysql2", "npm:2.2.5"],
             ["nodemon", "npm:2.0.7"],
             ["passport", "npm:0.4.1"],
+            ["passport-facebook-token", "npm:4.0.0"],
             ["passport-local", "npm:1.0.0"],
             ["prettier", "npm:2.3.0"],
             ["reflect-metadata", "npm:0.1.13"],
@@ -380,6 +383,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/passport", "npm:1.0.6"],
             ["@types/express", "npm:4.17.12"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/passport-facebook-token", [
+        ["npm:0.4.34", {
+          "packageLocation": "./.yarn/cache/@types-passport-facebook-token-npm-0.4.34-0150943fc2-bd12ee8cb9.zip/node_modules/@types/passport-facebook-token/",
+          "packageDependencies": [
+            ["@types/passport-facebook-token", "npm:0.4.34"],
+            ["@types/express", "npm:4.17.12"],
+            ["@types/passport", "npm:1.0.6"]
           ],
           "linkType": "HARD",
         }]
@@ -993,6 +1007,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/base64-js-npm-1.5.1-b2f7275641-c1b41a26dd.zip/node_modules/base64-js/",
           "packageDependencies": [
             ["base64-js", "npm:1.5.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["base64url", [
+        ["npm:3.0.1", {
+          "packageLocation": "./.yarn/cache/base64url-npm-3.0.1-4c171c4917-e7c3424af4.zip/node_modules/base64url/",
+          "packageDependencies": [
+            ["base64url", "npm:3.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -2492,6 +2515,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["helmet", [
+        ["npm:4.6.0", {
+          "packageLocation": "./.yarn/cache/helmet-npm-4.6.0-f244fd965c-5018633703.zip/node_modules/helmet/",
+          "packageDependencies": [
+            ["helmet", "npm:4.6.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["highlight.js", [
         ["npm:10.7.2", {
           "packageLocation": "./.yarn/cache/highlight.js-npm-10.7.2-ad09d5e6bb-8208e01001.zip/node_modules/highlight.js/",
@@ -3542,6 +3574,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["oauth", [
+        ["npm:0.9.15", {
+          "packageLocation": "./.yarn/cache/oauth-npm-0.9.15-a6aae972bc-2f1609b8e7.zip/node_modules/oauth/",
+          "packageDependencies": [
+            ["oauth", "npm:0.9.15"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["object-assign", [
         ["npm:4.1.1", {
           "packageLocation": "./.yarn/cache/object-assign-npm-4.1.1-1004ad6dec-66cf021898.zip/node_modules/object-assign/",
@@ -3692,12 +3733,59 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["passport-facebook-token", [
+        ["npm:4.0.0", {
+          "packageLocation": "./.yarn/cache/passport-facebook-token-npm-4.0.0-58f46330ca-3356c78e9a.zip/node_modules/passport-facebook-token/",
+          "packageDependencies": [
+            ["passport-facebook-token", "npm:4.0.0"],
+            ["passport-oauth", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["passport-local", [
         ["npm:1.0.0", {
           "packageLocation": "./.yarn/cache/passport-local-npm-1.0.0-ed89961a0c-2d3decab3f.zip/node_modules/passport-local/",
           "packageDependencies": [
             ["passport-local", "npm:1.0.0"],
             ["passport-strategy", "npm:1.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["passport-oauth", [
+        ["npm:1.0.0", {
+          "packageLocation": "./.yarn/cache/passport-oauth-npm-1.0.0-dd172fea30-64d33b282d.zip/node_modules/passport-oauth/",
+          "packageDependencies": [
+            ["passport-oauth", "npm:1.0.0"],
+            ["passport-oauth1", "npm:1.1.0"],
+            ["passport-oauth2", "npm:1.5.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["passport-oauth1", [
+        ["npm:1.1.0", {
+          "packageLocation": "./.yarn/cache/passport-oauth1-npm-1.1.0-11e7246209-bd809415b4.zip/node_modules/passport-oauth1/",
+          "packageDependencies": [
+            ["passport-oauth1", "npm:1.1.0"],
+            ["oauth", "npm:0.9.15"],
+            ["passport-strategy", "npm:1.0.0"],
+            ["utils-merge", "npm:1.0.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["passport-oauth2", [
+        ["npm:1.5.0", {
+          "packageLocation": "./.yarn/cache/passport-oauth2-npm-1.5.0-3119b34b7e-b63ff7843e.zip/node_modules/passport-oauth2/",
+          "packageDependencies": [
+            ["passport-oauth2", "npm:1.5.0"],
+            ["base64url", "npm:3.0.1"],
+            ["oauth", "npm:0.9.15"],
+            ["passport-strategy", "npm:1.0.0"],
+            ["uid2", "npm:0.0.3"],
+            ["utils-merge", "npm:1.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -4874,6 +4962,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["uid2", [
+        ["npm:0.0.3", {
+          "packageLocation": "./.yarn/cache/uid2-npm-0.0.3-f7815612fd-7b0fc54edb.zip/node_modules/uid2/",
+          "packageDependencies": [
+            ["uid2", "npm:0.0.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["undefsafe", [
         ["npm:2.0.3", {
           "packageLocation": "./.yarn/cache/undefsafe-npm-2.0.3-ce5f7e2bb1-0974f82a87.zip/node_modules/undefsafe/",
@@ -5194,6 +5291,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express-session", "npm:1.17.3"],
             ["@types/node", "npm:15.6.1"],
             ["@types/passport", "npm:0.4.7"],
+            ["@types/passport-facebook-token", "npm:0.4.34"],
             ["@types/passport-local", "npm:1.0.33"],
             ["@types/prettier", "npm:2.2.3"],
             ["@typescript-eslint/eslint-plugin", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:4.25.0"],
@@ -5207,9 +5305,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
+            ["helmet", "npm:4.6.0"],
             ["mysql2", "npm:2.2.5"],
             ["nodemon", "npm:2.0.7"],
             ["passport", "npm:0.4.1"],
+            ["passport-facebook-token", "npm:4.0.0"],
             ["passport-local", "npm:1.0.0"],
             ["prettier", "npm:2.3.0"],
             ["reflect-metadata", "npm:0.1.13"],
