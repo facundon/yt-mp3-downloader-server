@@ -1,5 +1,8 @@
 {
    "name": "yt-mp3-downloader-server",
+   "engines": {
+      "node": "14.15.5"
+   },
    "version": "0.1.0",
    "private": true,
    "author": {
@@ -43,7 +46,7 @@
       "prettier": "^2.3.0"
    },
    "scripts": {
-      "build": "tsc -p .",
+      "build": "yarn && ts-node src/index.ts",
       "start": "nodemon src/index.ts"
    }
 }
