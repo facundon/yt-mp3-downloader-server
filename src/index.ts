@@ -1,11 +1,15 @@
 import express from "express"
 import session from "express-session"
 import passport from "passport"
+import helmet from "helmet"
 import cors, { CorsOptions } from "cors"
 import { TypeormStore } from "typeorm-store"
 import { createConnection } from "typeorm"
 
 import implementLocalStrategy from "./auth/local"
+import implementFacebookStrategy from "./auth/facebook"
+// import implementGoogleStrategy from "./auth/google"
+
 import { Session } from "./models/Session"
 import router from "./routes"
 
@@ -36,14 +40,17 @@ createConnection()
          },
       }
       if (app.get("env") === "production") {
-         app.set("trust proxy", 1) // trust first proxy
-         SESSION_CONFIG.cookie!.secure = true // serve secure cookies
+         // app.set("trust proxy", 1) // trust first proxy
+         // SESSION_CONFIG.cookie!.secure = true // serve secure cookies
       }
+      app.use(helmet())
       app.use(express.json())
       app.use(express.urlencoded({ extended: true }))
       app.use(cors(CORS_CONFIG))
       app.use(session(SESSION_CONFIG))
       implementLocalStrategy()
+      implementFacebookStrategy()
+      // implementGoogleStrategy()
       app.use(passport.initialize())
       app.use(passport.session())
       app.use(router)

@@ -1,15 +1,11 @@
 import axios, { AxiosResponse } from "axios"
 import { Request, Response } from "express"
-import {
-   appendVideoDuration,
-   getVideosId,
-   checkYoutubeEnvVariables,
-} from "../utils"
+import { appendVideoDuration, getVideosId, checkEnvVariables } from "../utils"
 
 import { YouTubeSearchResponse, YouTubeVideoResponse } from "../types/youtube"
 
 export async function searchYoutube(req: Request, res: Response) {
-   if (!checkYoutubeEnvVariables()) return res.send(501)
+   if (!checkEnvVariables()) return res.send(501)
    const youtubeApi = axios.create({
       params: {
          type: "video",

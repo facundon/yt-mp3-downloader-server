@@ -42,7 +42,8 @@ export default function implementLocalStrategy() {
       try {
          const userEntity = getRepository(User)
          const user = await userEntity.findOne({ id: userId })
-         done(null, user)
+         if (user) done(null, user)
+         else done(null, false)
       } catch (error) {
          done(error)
       }

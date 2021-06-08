@@ -1,10 +1,19 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
 import { IsEmail, IsNotEmpty, MinLength } from "class-validator"
 import { Video } from "./Video"
+
+export enum userMethod {
+   LOCAL = "local",
+   FB = "facebook",
+   GOOGLE = "google",
+}
 @Entity()
 export class User {
    @PrimaryGeneratedColumn("uuid")
    id: string
+
+   @Column({ type: "enum", enum: userMethod, default: userMethod.LOCAL })
+   method: userMethod
 
    @Column({ nullable: false })
    @IsNotEmpty({ message: "Please enter a name" })
@@ -14,6 +23,7 @@ export class User {
    name: string
 
    @Column({ unique: true, nullable: false })
+   @IsNotEmpty()
    @IsEmail()
    email: string
 
