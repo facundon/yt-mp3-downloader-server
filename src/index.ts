@@ -16,6 +16,7 @@ import router from "./routes"
 import "reflect-metadata"
 
 const PORT = process.env.PORT || 8080
+const HOST = process.env.HOST || "localhost"
 const CORS_CONFIG: CorsOptions = {
    origin: process.env.FRONTEND_URL,
    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
@@ -56,7 +57,7 @@ createConnection()
       app.use(router)
 
       app.listen(PORT, () => {
-         console.log(`Server listening at http://localhost:${PORT}`)
+         console.log(`Server listening at http://${HOST}:${PORT}`)
       })
    })
    .catch(error => console.log("TypeORM connection error: ", error))
