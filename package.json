@@ -46,7 +46,7 @@
       "prettier": "^2.3.0"
    },
    "scripts": {
-      "build": "yarn && ts-node src/index.ts",
+      "build": "tsc -p .",
       "start": "nodemon src/index.ts"
    }
 }
