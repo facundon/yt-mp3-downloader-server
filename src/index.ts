@@ -15,7 +15,7 @@ import router from "./routes"
 
 import "reflect-metadata"
 
-const PORT = (process.env.PORT as unknown as number) || 8080
+const PORT = parseInt(process.env.PORT!) || 8080
 const HOST = process.env.HOST || "localhost"
 const CORS_CONFIG: CorsOptions = {
    origin: process.env.FRONTEND_URL,
@@ -38,11 +38,12 @@ createConnection()
          cookie: {
             maxAge: 1000 * 60 * 60 * 24,
             secure: undefined,
+            sameSite: "none",
          },
       }
       if (app.get("env") === "production") {
-         // app.set("trust proxy", 1) // trust first proxy
-         // SESSION_CONFIG.cookie!.secure = true // serve secure cookies
+         app.set("trust proxy", 1) // trust first proxy
+         SESSION_CONFIG.cookie!.secure = true // serve secure cookies
       }
       app.use(helmet())
       app.use(express.json())

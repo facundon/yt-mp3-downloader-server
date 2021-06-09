@@ -23,15 +23,11 @@ router.post(
    passport.authenticate("facebook-token"),
    userLogin
 )
-router.get(
-   "/login/google",
-   passport.authenticate("google", { scope: ["profile"] })
-)
 
 router.get("/api/converter", isAuth, videoDownload)
 router.get("/api/youtube", isAuth, searchYoutube)
-router.get("/user", isAuth, userLogin)
 
+router.get("/user", isAuth, userLogin)
 router.get("/user/favorites", isAuth, getFavorites)
 router.put("/user/favorites/:id", isAuth, addFavorite)
 router.delete("/user/favorites/:id", isAuth, delFavorite)
