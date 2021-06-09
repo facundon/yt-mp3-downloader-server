@@ -15,7 +15,7 @@ import router from "./routes"
 
 import "reflect-metadata"
 
-const PORT = process.env.PORT || 8080
+const PORT = (process.env.PORT as unknown as number) || 8080
 const HOST = process.env.HOST || "localhost"
 const CORS_CONFIG: CorsOptions = {
    origin: process.env.FRONTEND_URL,
@@ -55,8 +55,8 @@ createConnection()
       app.use(passport.initialize())
       app.use(passport.session())
       app.use(router)
-
-      app.listen(PORT, () => {
+      //
+      app.listen(PORT, "0.0.0.0", () => {
          console.log(`Server listening at http://${HOST}:${PORT}`)
       })
    })
