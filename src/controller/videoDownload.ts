@@ -1,6 +1,5 @@
 import { WebsocketRequestHandler } from "express-ws"
 import { readFile } from "fs/promises"
-// import { rm } from "fs"
 
 import { getRepository } from "typeorm"
 import { Video } from "../models/Video"

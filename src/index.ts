@@ -11,7 +11,6 @@ import implementLocalStrategy from "./auth/local"
 import implementFacebookStrategy from "./auth/facebook"
 
 import { Session } from "./models/Session"
-// import router from "./routes"
 
 import "reflect-metadata"
 
