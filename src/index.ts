@@ -1,5 +1,6 @@
 import express from "express"
 import session from "express-session"
+import expressWs from "express-ws"
 import passport from "passport"
 import helmet from "helmet"
 import cors, { CorsOptions } from "cors"
@@ -8,10 +9,9 @@ import { createConnection } from "typeorm"
 
 import implementLocalStrategy from "./auth/local"
 import implementFacebookStrategy from "./auth/facebook"
-// import implementGoogleStrategy from "./auth/google"
 
 import { Session } from "./models/Session"
-import router from "./routes"
+// import router from "./routes"
 
 import "reflect-metadata"
 
@@ -27,8 +27,10 @@ const CORS_CONFIG: CorsOptions = {
 }
 
 createConnection()
-   .then(connection => {
+   .then(async connection => {
       const app = express()
+      expressWs(app)
+      const router = await import("./routes").then(val => val.default)
       const sessionRepository = connection.getRepository(Session)
       const SESSION_CONFIG: session.SessionOptions = {
          secret: process.env.SECRET || "testingsecretsession",
@@ -52,11 +54,10 @@ createConnection()
       app.use(session(SESSION_CONFIG))
       implementLocalStrategy()
       implementFacebookStrategy()
-      // implementGoogleStrategy()
       app.use(passport.initialize())
       app.use(passport.session())
       app.use(router)
-      //
+
       app.listen(PORT, "0.0.0.0", () => {
          console.log(`Server listening at http://${HOST}:${PORT}`)
       })

@@ -1,59 +1,57 @@
-import { Request, Response } from "express"
-import { exec } from "child_process"
-import { rm } from "fs"
+import { WebsocketRequestHandler } from "express-ws"
+import { readFile } from "fs/promises"
+// import { rm } from "fs"
 
 import { getRepository } from "typeorm"
-import { getSongPath, zipFolder } from "../utils"
 import { Video } from "../models/Video"
+import { execDownload } from "../utils/download"
 
-const downloadFolder = "./downloads/"
-const upgradeYtDlScript = "pip2 install --upgrade youtube-dl"
-const dlOptions = [
-   "-f bestaudio/best",
-   "--extract-audio",
-   "--audio-format mp3",
-   "--audio-quality 3",
-   `-o '${downloadFolder}%(title)s.%(ext)s'`,
-]
+enum WSResponse {
+   READY = "ready",
+   RECIEVED = "recieved",
+   ERROR = "error",
+}
 
-export async function videoDownload(req: Request, res: Response) {
-   let videosId = req.query.id
-   let multiDownload = false
-   if (videosId === "all") {
-      const videos = await getRepository(Video).find({ user: req.user.id })
-      videosId = videos.map(video => video.videoId).join(" ")
-      multiDownload = true
+class Response {
+   constructor(status: WSResponse, value: string | Buffer) {
+      this.status = status
+      this.value = value
    }
-   let retry = 0
+   status
+   value
 
-   const sendFile = (filePath: string) => {
-      res.download(filePath, err => {
-         if (!err) console.info("Completed!")
-         else if (!res.headersSent) res.status(500).json(err)
-      })
-      rm(filePath, err => err && console.error(err))
+   getResponse() {
+      return JSON.stringify({ status: this.status, value: this.value })
    }
+}
 
-   function execDownload() {
-      if (retry === 1) return
-      exec(
-         `youtube-dl ${dlOptions.join(" ")} ${videosId}`,
-         (err, stdout, stderr) => {
-            if (err || stderr) {
-               exec(upgradeYtDlScript, err => {
-                  !err && console.info("Updated youtube-dl. Trying again...")
-                  retry++
-                  execDownload()
-               })
-            }
-            if (multiDownload) {
-               zipFolder(downloadFolder, filePath => sendFile(filePath))
-               return
-            }
-            const songPath = getSongPath(stdout)
-            sendFile(songPath)
-         }
-      )
-   }
-   execDownload()
+export const videoDownload: WebsocketRequestHandler = (ws, req) => {
+   ws.on("message", async msg => {
+      const response = new Response(WSResponse.ERROR, "You are not logged in")
+      if (!req.isAuthenticated()) {
+         ws.send(response.getResponse())
+         return
+      }
+      let videosId = msg as string | string[]
+      let multiDownload = false
+      if (videosId === "all") {
+         const videos = await getRepository(Video).find({ user: req.user.id })
+         videosId = videos.map(video => video.videoId).join(" ")
+         multiDownload = true
+      }
+      response.status = WSResponse.RECIEVED
+      response.value = "Recieved"
+      ws.send(response.getResponse())
+      try {
+         const filePath = await execDownload(videosId, multiDownload, 1)
+         const file = await readFile(filePath, { encoding: "base64" })
+         response.status = WSResponse.READY
+         response.value = file
+         ws.send(response.getResponse())
+         ws.close()
+      } catch (err) {
+         ws.send({ status: WSResponse.ERROR, value: err.message })
+         ws.close()
+      }
+   })
 }

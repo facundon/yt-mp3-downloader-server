@@ -41,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cors", "npm:2.8.10"],
             ["@types/express", "npm:4.17.12"],
             ["@types/express-session", "npm:1.17.3"],
+            ["@types/express-ws", "npm:3.0.0"],
             ["@types/node", "npm:15.6.1"],
             ["@types/passport", "npm:0.4.7"],
             ["@types/passport-facebook-token", "npm:0.4.34"],
@@ -57,6 +58,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
+            ["express-ws", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:5.0.2"],
             ["helmet", "npm:4.6.0"],
             ["mysql2", "npm:2.2.5"],
             ["nodemon", "npm:2.0.7"],
@@ -300,6 +302,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/range-parser", "npm:1.2.3"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:4.17.21", {
+          "packageLocation": "./.yarn/cache/@types-express-serve-static-core-npm-4.17.21-a9ca773254-437165cc12.zip/node_modules/@types/express-serve-static-core/",
+          "packageDependencies": [
+            ["@types/express-serve-static-core", "npm:4.17.21"],
+            ["@types/node", "npm:15.6.1"],
+            ["@types/qs", "npm:6.9.6"],
+            ["@types/range-parser", "npm:1.2.3"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@types/express-session", [
@@ -308,6 +320,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/express-session", "npm:1.17.3"],
             ["@types/express", "npm:4.17.12"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/express-ws", [
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/@types-express-ws-npm-3.0.0-ba9e265ed0-f70e3eba8f.zip/node_modules/@types/express-ws/",
+          "packageDependencies": [
+            ["@types/express-ws", "npm:3.0.0"],
+            ["@types/express", "npm:4.17.12"],
+            ["@types/express-serve-static-core", "npm:4.17.21"],
+            ["@types/ws", "npm:7.4.4"]
           ],
           "linkType": "HARD",
         }]
@@ -474,6 +498,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-validator-npm-13.1.3-4191eefe06-47e1de4aeb.zip/node_modules/@types/validator/",
           "packageDependencies": [
             ["@types/validator", "npm:13.1.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/ws", [
+        ["npm:7.4.4", {
+          "packageLocation": "./.yarn/cache/@types-ws-npm-7.4.4-63bcbe5794-6a02b31642.zip/node_modules/@types/ws/",
+          "packageDependencies": [
+            ["@types/ws", "npm:7.4.4"],
+            ["@types/node", "npm:15.6.1"]
           ],
           "linkType": "HARD",
         }]
@@ -2112,6 +2146,29 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["parseurl", "npm:1.3.3"],
             ["safe-buffer", "npm:5.2.1"],
             ["uid-safe", "npm:2.1.5"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["express-ws", [
+        ["npm:5.0.2", {
+          "packageLocation": "./.yarn/cache/express-ws-npm-5.0.2-97e33b6c4a-de38d08fee.zip/node_modules/express-ws/",
+          "packageDependencies": [
+            ["express-ws", "npm:5.0.2"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:5.0.2", {
+          "packageLocation": "./.yarn/$$virtual/express-ws-virtual-d9f5d7067a/0/cache/express-ws-npm-5.0.2-97e33b6c4a-de38d08fee.zip/node_modules/express-ws/",
+          "packageDependencies": [
+            ["express-ws", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:5.0.2"],
+            ["@types/express", "npm:4.17.12"],
+            ["express", "npm:4.17.1"],
+            ["ws", "virtual:d9f5d7067a72c7541e6db65dd91833494bc3a49925cec80e6b96eb2a45ab701097ac215c2fb46086e9b31bbc8ed08979058600c2ec741fd25c4a1e16c987fc30#npm:7.4.6"]
+          ],
+          "packagePeers": [
+            "@types/express",
+            "express"
           ],
           "linkType": "HARD",
         }]
@@ -5180,6 +5237,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["ws", [
+        ["npm:7.4.6", {
+          "packageLocation": "./.yarn/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
+          "packageDependencies": [
+            ["ws", "npm:7.4.6"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:d9f5d7067a72c7541e6db65dd91833494bc3a49925cec80e6b96eb2a45ab701097ac215c2fb46086e9b31bbc8ed08979058600c2ec741fd25c4a1e16c987fc30#npm:7.4.6", {
+          "packageLocation": "./.yarn/$$virtual/ws-virtual-75a1f50330/0/cache/ws-npm-7.4.6-9c9a725604-ffeb626d92.zip/node_modules/ws/",
+          "packageDependencies": [
+            ["ws", "virtual:d9f5d7067a72c7541e6db65dd91833494bc3a49925cec80e6b96eb2a45ab701097ac215c2fb46086e9b31bbc8ed08979058600c2ec741fd25c4a1e16c987fc30#npm:7.4.6"],
+            ["@types/bufferutil", null],
+            ["@types/utf-8-validate", null],
+            ["bufferutil", null],
+            ["utf-8-validate", null]
+          ],
+          "packagePeers": [
+            "@types/bufferutil",
+            "@types/utf-8-validate",
+            "bufferutil",
+            "utf-8-validate"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["xdg-basedir", [
         ["npm:4.0.0", {
           "packageLocation": "./.yarn/cache/xdg-basedir-npm-4.0.0-ed08d380e2-928953cb7d.zip/node_modules/xdg-basedir/",
@@ -5289,6 +5372,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cors", "npm:2.8.10"],
             ["@types/express", "npm:4.17.12"],
             ["@types/express-session", "npm:1.17.3"],
+            ["@types/express-ws", "npm:3.0.0"],
             ["@types/node", "npm:15.6.1"],
             ["@types/passport", "npm:0.4.7"],
             ["@types/passport-facebook-token", "npm:0.4.34"],
@@ -5305,6 +5389,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint", "npm:7.27.0"],
             ["express", "npm:4.17.1"],
             ["express-session", "npm:1.17.2"],
+            ["express-ws", "virtual:8d71f9384123b56953eb7cff3d3a2574322317b5b95752072bf98ba5347abc08bb26b5f4c8e73ec05c8a1faced592a65ee56a47f13e835cee27e307eddbe58f7#npm:5.0.2"],
             ["helmet", "npm:4.6.0"],
             ["mysql2", "npm:2.2.5"],
             ["nodemon", "npm:2.0.7"],

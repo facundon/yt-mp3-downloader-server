@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 import { getRepository } from "typeorm"
 import { User } from "../models/User"
 import { Video } from "../models/Video"
-import { checkVideoDuplicates } from "../utils"
+import { checkVideoDuplicates } from "../utils/etc"
 
 export async function addFavorite(req: Request, res: Response) {
    if (!req.params.id || !req.body.title) return

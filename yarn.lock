@@ -179,6 +179,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express-serve-static-core@npm:*":
+  version: 4.17.21
+  resolution: "@types/express-serve-static-core@npm:4.17.21"
+  dependencies:
+    "@types/node": "*"
+    "@types/qs": "*"
+    "@types/range-parser": "*"
+  checksum: 437165cc123eacb36c7602e8df738d053c2fe4d67957e2b3758bd0b7426cd0439201b411b59dc85abc74456870011b0d91abb2f7bf8e35d8b643ecbdc5d91dfd
+  languageName: node
+  linkType: hard
+
 "@types/express-serve-static-core@npm:^4.17.18":
   version: 4.17.20
   resolution: "@types/express-serve-static-core@npm:4.17.20"
@@ -196,6 +207,17 @@ __metadata:
   dependencies:
     "@types/express": "*"
   checksum: 4ec0442aaba90400ac308849418d49d390d510f34e7164212966a6530a93d3e7aef1b46672a13c8a54945ce17547b4dcba6ebc9263446c0f8ce245df4bbc705e
+  languageName: node
+  linkType: hard
+
+"@types/express-ws@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@types/express-ws@npm:3.0.0"
+  dependencies:
+    "@types/express": "*"
+    "@types/express-serve-static-core": "*"
+    "@types/ws": "*"
+  checksum: f70e3eba8f246ea5024d9ff33acb57efbbee4e95559d39bc78e8cf78f495188d2c426a739f9a5a53bb2f38a2442cb024921f16784720584af2c18a2cc908b311
   languageName: node
   linkType: hard
 
@@ -351,6 +373,15 @@ __metadata:
   version: 13.1.3
   resolution: "@types/validator@npm:13.1.3"
   checksum: 47e1de4aebd3efbf97deea2d0f72b2308c924f95833c7a18d4f5d7cbd500f875fed9afd85038022ca352e3effb82241de149e5f1cbb32957b99fd7b0484641f3
+  languageName: node
+  linkType: hard
+
+"@types/ws@npm:*":
+  version: 7.4.4
+  resolution: "@types/ws@npm:7.4.4"
+  dependencies:
+    "@types/node": "*"
+  checksum: 6a02b3164250813510c5e73998a2bbca1fb98dc23428d70c2c6d664dfbac3fde32cd8d4eb34c335a0221f49a6f02d71b09645b236b01de1aea85f80352f67e1f
   languageName: node
   linkType: hard
 
@@ -1688,6 +1719,17 @@ __metadata:
     safe-buffer: 5.2.1
     uid-safe: ~2.1.5
   checksum: d01a9d12c2541618b3c8d154c417c1b95ecef4a0891d9902fa18b477ad0ba1eb80559db7c88510861c1c7b151f282cc12d6147dce4ececca5ad04e56e573f983
+  languageName: node
+  linkType: hard
+
+"express-ws@npm:^5.0.2":
+  version: 5.0.2
+  resolution: "express-ws@npm:5.0.2"
+  dependencies:
+    ws: ^7.4.6
+  peerDependencies:
+    express: ^4.0.0 || ^5.0.0-alpha.1
+  checksum: de38d08feed93aa73cd175e18d6beea35fece7f94e628ae1402b1db1ebe7d7a6049e7e66dc6444bc30bdf83e175ca1ce69136cdb6a6d077101762a5757b361ff
   languageName: node
   linkType: hard
 
@@ -4405,6 +4447,21 @@ typescript@4.2.4:
   languageName: node
   linkType: hard
 
+"ws@npm:^7.4.6":
+  version: 7.4.6
+  resolution: "ws@npm:7.4.6"
+  peerDependencies:
+    bufferutil: ^4.0.1
+    utf-8-validate: ^5.0.2
+  peerDependenciesMeta:
+    bufferutil:
+      optional: true
+    utf-8-validate:
+      optional: true
+  checksum: ffeb626d92f14aa3a67aa3784824c1d290131e25d225f4ca6b1b6b6d7ea754fca67694d89a5b99b144382365e1bccf1f7ec2f92df56f0d25f44939b070452f06
+  languageName: node
+  linkType: hard
+
 "xdg-basedir@npm:^4.0.0":
   version: 4.0.0
   resolution: "xdg-basedir@npm:4.0.0"
@@ -4498,6 +4555,7 @@ typescript@4.2.4:
     "@types/cors": ^2
     "@types/express": ^4.17.12
     "@types/express-session": ^1
+    "@types/express-ws": ^3.0.0
     "@types/node": ^15.6.1
     "@types/passport": ^0
     "@types/passport-facebook-token": ^0.4.34
@@ -4514,6 +4572,7 @@ typescript@4.2.4:
     eslint: ^7.27.0
     express: ^4.17.1
     express-session: ^1.17.2
+    express-ws: ^5.0.2
     helmet: ^4.6.0
     mysql2: ^2.2.5
     nodemon: ^2.0.7

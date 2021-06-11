@@ -2,7 +2,7 @@ import passport from "passport"
 import Facebook from "passport-facebook-token"
 import { getRepository } from "typeorm"
 import { User, userMethod } from "../models/User"
-import { checkEnvVariables } from "../utils"
+import { checkEnvVariables } from "../utils/etc"
 import { genPassword, userExists } from "./utils"
 
 const verify = async (

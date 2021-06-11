@@ -1,6 +1,7 @@
 import axios, { AxiosResponse } from "axios"
 import { Request, Response } from "express"
-import { appendVideoDuration, getVideosId, checkEnvVariables } from "../utils"
+import { checkEnvVariables } from "../utils/etc"
+import { appendVideoDuration, getVideosId } from "../utils/youtube"
 
 import { YouTubeSearchResponse, YouTubeVideoResponse } from "../types/youtube"
 

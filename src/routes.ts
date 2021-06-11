@@ -24,7 +24,7 @@ router.post(
    userLogin
 )
 
-router.get("/api/converter", isAuth, videoDownload)
+router.ws("/api/converter", videoDownload)
 router.get("/api/youtube", isAuth, searchYoutube)
 
 router.get("/user", isAuth, userLogin)
